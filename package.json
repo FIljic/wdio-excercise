@@ -3,15 +3,18 @@
     "version": "0.1.0",
     "private": true,
     "devDependencies": {
+        "@percy/cli": "^1.27.5",
+        "@percy/webdriverio": "^3.0.1",
         "@wdio/cli": "^7.16.10",
         "@wdio/local-runner": "^7.16.10",
         "@wdio/mocha-framework": "^7.16.6",
         "@wdio/spec-reporter": "^7.16.9",
-        "chromedriver": "^118.0.1",
+        "chromedriver": "^119.0.1",
         "wdio-chromedriver-service": "^8.1.1"
     },
     "scripts": {
         "wdio": "wdio run wdio.conf.js",
-        "test": "wdio wdio.conf.js"
+        "test": "wdio wdio.conf.js",
+        "percy-test": "set PERCY_TOKEN=app_545a45bf48ee4ccc609b2d918e708cdb6e49c11d39be43b88e07c8942acf9a4e && set PERCY_BRANCH=local && percy exec -- wdio wdio.conf.js"
     }
 }

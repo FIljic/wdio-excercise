@@ -281,4 +281,11 @@ exports.config = {
     */
     //onReload: function(oldSessionId, newSessionId) {
     //}
+    before: function(capabilities, specs) {
+        // Import percySnapshot function
+        const { percySnapshot } = require("@percy/webdriverio");
+        // Make percySnapshot available as a global variable in all wdio tests
+        global.percySnapshot = percySnapshot;
+      }
+     
 }
